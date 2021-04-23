@@ -12,8 +12,7 @@ import { GoogleLoginProvider } from "angularx-social-login";
 export class LoginComponent implements OnInit {
 
   public user: SocialUser = new SocialUser;
-   GoogleLoginProvider = GoogleLoginProvider;
-
+   
   constructor(private authService: SocialAuthService) {}
 
   ngOnInit() {
@@ -23,11 +22,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  signInWithGoogle(): void {
+  public signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
-  signOut(): void {
+  public signOut(): void {
     this.authService.signOut();
   }
 }
